@@ -1,4 +1,4 @@
-# Leona's Blog Page (Github pages)
+# Bella's Blog Page (Github pages)
 
 Site generator : [Jekyll](https://jekyllrb.com/)
 & Theme : [chirpy](https://github.com/cotes2020/jekyll-theme-chirpy/)
