@@ -16,12 +16,12 @@ lang: en
 prefer_datetime_locale:
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Asia/Shanghai
+timezone: Australia/Melbourne
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Leona's Blog                         # the main title
+title: Bella's Blog                         # the main title
 
 tagline: A personal techie notes   # it will display as the sub-title
 
@@ -29,10 +29,10 @@ description: >-                        # used by seo meta and the atom feed
   Personal note for base knowledge like OS, environment setup, math, coding languages, AD, etc.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://leona0918.github.io'
+url: 'https://bele99.github.io'
 
 github:
-  username: leona0918             # change to your github username
+  username: bele99             # change to your github username
 
 #twitter:
   #username: twitter_username            # change to your twitter username
@@ -40,12 +40,12 @@ github:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Leona
-  email: leonaxu0918@gmail.com             # change to your email address
+  name: Bella
+  email: liubinbin8899@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
     # - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/leona0918       # change to your github homepage
+    - https://github.com/bele99       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
