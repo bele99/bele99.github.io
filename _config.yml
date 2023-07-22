@@ -23,7 +23,7 @@ timezone: Australia/Melbourne
 
 title: Bella's Blog                         # the main title
 
-tagline: A personal techie notes   # it will display as the sub-title
+tagline: Documenting my discoveries in the world   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   Personal note for base knowledge like OS, environment setup, math, coding languages, AD, etc.
@@ -48,7 +48,7 @@ social:
     - https://github.com/bele99       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/bellaliuduske/
 
 google_site_verification:               # fill in to your verification string
 

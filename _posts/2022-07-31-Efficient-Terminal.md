@@ -1,8 +1,8 @@
 ---
 title: "Efficient Terminal"
 date: 2022-07-31 +0800
-categories: [OS, Ubuntu]
-tags: [environment setup]
+categories: [DevOps, ML]
+tags: [DevOps in ML, Azure]
 ---
 
 (pre) what is shell (a capture from bird's linux), what's the default shell come with ubuntu, what are the common shells most widely used today.
