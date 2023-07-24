@@ -1,7 +1,7 @@
 ---
 title: "Git Convenient Practices"
 date: 2022-10-17 +0800
-categories: [git]
+categories: [Statistic]
 tags: [git daily usage]
 ---
 

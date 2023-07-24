@@ -1,7 +1,7 @@
 ---
 title: "Static Assert vs Assert"
 date: 2022-10-10 +0800
-categories: [C++]
+categories: [Statistic]
 tags: [c++11]
 ---
 

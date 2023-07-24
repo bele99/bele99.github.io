@@ -1,7 +1,7 @@
 ---
 title: "Cpp Type Inference(auto and decltype)"
 date: 2022-10-08 +0800
-categories: [C++]
+categories: [DevOps]
 tags: [c++11]
 ---
 

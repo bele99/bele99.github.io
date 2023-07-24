@@ -1,7 +1,7 @@
 ---
 title: "Enum and std::bitset Usage in C++"
 date: 2022-10-13 +0800
-categories: [C++]
+categories: [Statistic]
 tags: [c++11]
 ---
 

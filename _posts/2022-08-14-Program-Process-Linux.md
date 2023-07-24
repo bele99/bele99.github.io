@@ -1,7 +1,7 @@
 ---
 title: "Program Process Linux"
 date: 2022-08-14 +0800
-categories: [OS, Ubuntu]
+categories: [ML]
 tags: [ubuntu]
 mermaid: true
 ---
