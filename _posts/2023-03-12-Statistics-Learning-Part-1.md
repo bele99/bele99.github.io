@@ -7,14 +7,24 @@ tags: [Statistic, Standard Deviation, Variance, Coefficient of Variation, Median
 
 ## Standard Deviation
 
-| Standard Deviation    |     Explain     |
-|:----------------------------------|:-------------------------------|
-| What?          |The standard deviation measures the average distance between each data point and the mean of the dataset.SD is the most common measure of variability.   |
-|Formula|![Alt text](/images\2023\20230312\SD-Population.png) ![Alt text](/images\2023\20230312\SD-Smaple.png)|
-| Interpretation          |Larger standard deviation: the numbers are more dispersed.Smaller standard deviation: the numbers group closely around the mean.|
-| Advantage               | standard deviation over variance because it is directly interpretable.    |
-| Disadvantage | Sensitive to outliers    |
-| Application |1. commonly used in inferential statistics. 2. used in statistical analysis, quality control, and risk assessment. 3. used to determine the volatility of markets, financial instruments, and investment returns. |
+### What?          
+The standard deviation measures the average distance between each data point and the mean of the dataset.SD is the most common measure of variability.
+
+### Formula
+![Alt text](/images\2023\20230312\SD-Population.png) {: width="30" height="20" .w-50 .left}
+![Alt text](/images\2023\20230312\SD-Smaple.png) {: width="30" height="20" .w-50 .left}
+
+### Interpretation
+- Larger standard deviation: the numbers are more dispersed.
+- Smaller standard deviation: the numbers group closely around the mean.
+### Advantage
+standard deviation over variance because it is directly interpretable.
+### Disadvantage
+Sensitive to outliers
+### Application
+1. commonly used in inferential statistics. 
+2. used in statistical analysis, quality control, and risk assessment. 
+3. used to determine the volatility of markets, financial instruments, and investment returns.
 
 ## Variance
 | Variance    |     Explain     |
