@@ -1,184 +1,55 @@
 ---
-title: "Trivial, standard-layout, POD"
-date: 2023-02-12 +0800
-categories: [C++]
-tags: [c++11]
+title: "Statistics learning Part 1"
+date: 2023-03-12 +0800
+categories: [Statistic]
+tags: [Statistic, Standard Deviation, Variance, Coefficient of Variation, Median Absolute Deviation]
 ---
 
->Below is a whole copy from [Reference ](https://learn.microsoft.com/en-us/cpp/cpp/trivial-standard-layout-and-pod-types?view=msvc-170).
-As the explaination is the most systematic and easiy to read/understand.
-When search "POD" on internet, the most mentioned points:
-- Plain Old Data
-- For communication with code written other language. This means the type is compatible with the types used in the C programming language, that is, can be exchanged with C libraries directly, in its binary form.
-- std::is_pod is deprecated in C++20, and replaced with std::is_trivial + std::is_standard_layout
-{: .prompt-info}
+## Standard Deviation
 
+| Standard Deviation    |     Explain     |
+|:----------------------------------|:-------------------------------|
+| What?          |The standard deviation measures the average distance between each data point and the mean of the dataset.SD is the most common measure of variability.   |
+|Formula|![Alt text](/images\2023\20230312\SD-Population.png) ![Alt text](/images\2023\20230312\SD-Smaple.png)|
+| Interpretation          |Larger standard deviation: the numbers are more dispersed.Smaller standard deviation: the numbers group closely around the mean.|
+| Advantage               | standard deviation over variance because it is directly interpretable.    |
+| Disadvantage | Sensitive to outliers    |
+| Application |1. commonly used in inferential statistics. 2. used in statistical analysis, quality control, and risk assessment. 3. used to determine the volatility of markets, financial instruments, and investment returns. |
 
-The term layout refers to how the members of an object of class, struct or union type are arranged in memory. In some cases, the layout is well-defined by the language specification. But when a class or struct contains certain C++ language features such as virtual base classes, virtual functions, members with different access control, then the compiler is free to choose a layout. That layout may vary depending on what optimizations are being performed and in many cases the object might not even occupy a contiguous area of memory. For example, if a class has virtual functions, all the instances of that class might share a single virtual function table. Such types are very useful, but they also have limitations. Because the layout is undefined they cannot be passed to programs written in other languages, such as C, and because they might be non-contiguous they cannot be reliably copied with fast low-level functions such as memcopy, or serialized over a network.
+## Variance
+| Variance    |     Explain     |
+|:----------------------------------|:-------------------------------|
+|What?|A measurement used to identify how far each number in the data set is from the mean.|
+|Formula|![Alt text](/images\2023\20230312\Variance-Population.png) ![Alt text](/images\2023\20230312\Variance-Sample.png)|
+|Interpretation|=0: all of the values within a data set are identical. >0: all variances are the form of positive numbers. * Large variances: the numbers are far from the mean and each other. * Small variances: the numbers are closer toghter in value.|
+|Advantage|It measures the spread of data points from the mean.|
+|Disadvantage|Sensitive to outliers, like SD.|
+|Application|1.Machine Learning: Used in Hypothesis Testing and Confidence Interval 2. Finance: Used to understand how risky and volatile the investment is, stability of mutual funds. 3.Forecasting: To make the weather forecast, projections about the company’s revenue. 4.Sports: Used to select the players in the team|
 
-To enable compilers as well as C++ programs and metaprograms to reason about the suitability of any given type for operations that depend on a particular memory layout, C++14 introduced three categories of simple classes and structs: trivial, standard-layout, and POD or Plain Old Data. The Standard Library has the function templates is_trivial<T>, is_standard_layout<T> and is_pod<T> that determine whether a given type belongs to a given category.
+## Coefficient of Variation (CV)
+| Coefficient of Variation (CV)    |     Explain     |
+|:----------------------------------|:-------------------------------|
+|What?|The CV is the ratio of the standard deviation to the mean, expressed as a percentage.|
+|Formula|![Alt text](/images\2023\20230312\CV-Population.png) ![Alt text](/images\2023\20230312\CV-Smaple.png)|
+|Interpretation|It measures the relative variability compared to the mean.|
+|Advantage|Allows for comparison of variability between datasets with different means. The coefficient of variation has its edge over standard deviation when it comes to comparing data.|
+|Disadvantage|Can be misleading when the mean is close to zero.|
+|Application|Useful in comparing variability in datasets with different scales
+commonly used in finance and biology.|
 
-## Trivial types
-When a class or struct in C++ has compiler-provided or explicitly defaulted special member functions, then it is a trivial type. It occupies a contiguous memory area. It can have members with different access specifiers. In C++, the compiler is free to choose how to order members in this situation. Therefore, you can memcopy such objects but you cannot reliably consume them from a C program. A trivial type T can be copied into an array of char or unsigned char, and safely copied back into a T variable. Note that because of alignment requirements, there might be padding bytes between type members.
+## Median Absolute Deviation(MAD)
+| Median Absolute Deviation(MAD)    |     Explain     |
+|:----------------------------------|:-------------------------------|
+|What?|The MAD is the median of the absolute deviations from the median of the dataset. It quantifies the spread of data points around the median.|
+|Formula|![Alt text](/images\2023\20230312\MAD.png)|
+|Interpretation||
+|Advantage|* Robust to outliers and extreme values. * Useful when the data is not normally distributed.|
+|Disadvantage|May be less sensitive to subtle changes in data.|
+|Application|Used in robust statistics, outlier detection, and data with non-normal distributions. MAD is a robust alternative to standard deviation, suitable for datasets |
 
-Trivial types have a trivial default constructor, trivial copy constructor, trivial copy assignment operator and trivial destructor. In each case, trivial means the constructor/operator/destructor is not user-provided and belongs to a class that has
-
-- no virtual functions or virtual base classes,
-
-- no base classes with a corresponding non-trivial constructor/operator/destructor
-
-- no data members of class type with a corresponding non-trivial constructor/operator/destructor
-
-The following examples show trivial types. In Trivial2, the presence of the Trivial2(int a, int b) constructor requires that you provide a default constructor. For the type to qualify as trivial, you must explicitly default that constructor.
-
-```cpp
-struct Trivial
-{
-   int i;
-private:
-   int j;
-};
-
-struct Trivial2
-{
-   int i;
-   Trivial2(int a, int b) : i(a), j(b) {}
-   Trivial2() = default;
-private:
-   int j;   // Different access control
-};
-```
-
-## Standard layout types
-When a class or struct does not contain certain C++ language features such as virtual functions which are not found in the C language, and all members have the same access control, it is a standard-layout type. It is memcopy-able and the layout is sufficiently defined that it can be consumed by C programs. Standard-layout types can have user-defined special member functions. In addition, standard layout types have these characteristics:
-
-- no virtual functions or virtual base classes
-
-- all non-static data members have the same access control
-
-- all non-static members of class type are standard-layout
-
-- any base classes are standard-layout
-
-- has no base classes of the same type as the first non-static data member.
-
-- meets one of these conditions:
-
-    - no non-static data member in the most-derived class and no more than one base class with non-static data members, or
-
-    - has no base classes with non-static data members
-
-The following code shows one example of a standard-layout type:
-```cpp
-struct SL
-{
-   // All members have same access:
-   int i;
-   int j;
-   SL(int a, int b) : i(a), j(b) {} // User-defined constructor OK
-};
-```
-
-The last two requirements can perhaps be better illustrated with code. In the next example, even though Base is standard-layout, Derived is not standard layout because both it (the most derived class) and Base have non-static data members:
-
-```cpp
-struct Base
-{
-   int i;
-   int j;
-};
-
-// std::is_standard_layout<Derived> == false!
-struct Derived : public Base
-{
-   int x;
-   int y;
-};
-```
-In this example Derived is standard-layout because Base has no non-static data members:
-
-```cpp
-struct Base
-{
-   void Foo() {}
-};
-
-// std::is_standard_layout<Derived> == true
-struct Derived : public Base
-{
-   int x;
-   int y;
-};
-```
-
-Derived would also be standard-layout if Base had the data members and Derived had only member functions.
-
-## POD types
-When a class or struct is both trivial and standard-layout, it is a POD (Plain Old Data) type. The memory layout of POD types is therefore contiguous and each member has a higher address than the member that was declared before it, so that byte for byte copies and binary I/O can be performed on these types. Scalar types such as int are also POD types. POD types that are classes can have only POD types as non-static data members.
-
-## Example
-The following example shows the distinctions between trivial, standard-layout, and POD types:
-
-```cpp
-#include <type_traits>
-#include <iostream>
-
-using namespace std;
-
-struct B
-{
-protected:
-   virtual void Foo() {}
-};
-
-// Neither trivial nor standard-layout
-struct A : B
-{
-   int a;
-   int b;
-   void Foo() override {} // Virtual function
-};
-
-// Trivial but not standard-layout
-struct C
-{
-   int a;
-private:
-   int b;   // Different access control
-};
-
-// Standard-layout but not trivial
-struct D
-{
-   int a;
-   int b;
-   D() {} //User-defined constructor
-};
-
-struct POD
-{
-   int a;
-   int b;
-};
-
-int main()
-{
-   cout << boolalpha;
-   cout << "A is trivial is " << is_trivial<A>() << endl; // false
-   cout << "A is standard-layout is " << is_standard_layout<A>() << endl;  // false
-
-   cout << "C is trivial is " << is_trivial<C>() << endl; // true
-   cout << "C is standard-layout is " << is_standard_layout<C>() << endl;  // false
-
-   cout << "D is trivial is " << is_trivial<D>() << endl;  // false
-   cout << "D is standard-layout is " << is_standard_layout<D>() << endl; // true
-
-   cout << "POD is trivial is " << is_trivial<POD>() << endl; // true
-   cout << "POD is standard-layout is " << is_standard_layout<POD>() << endl; // true
-
-   return 0;
-}
-```
 
 ## Reference
-- https://learn.microsoft.com/en-us/cpp/cpp/trivial-standard-layout-and-pod-types?view=msvc-170
+- https://www.shiksha.com/online-courses/articles/variance-and-standard-deviation/
+- https://www.mathsisfun.com/data/standard-deviation.html
+- https://365datascience.com/tutorials/statistics-tutorials/coefficient-variation-variance-standard-deviation/
+- https://www.r-bloggers.com/2013/08/absolute-deviation-around-the-median/
