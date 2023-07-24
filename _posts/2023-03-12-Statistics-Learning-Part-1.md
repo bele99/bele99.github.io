@@ -18,7 +18,7 @@ tags: [Statistic, Standard Deviation, Variance, Coefficient of Variation, Median
 
 ## Variance
 
-| Variance                           |                    Explain            |
+| Variance             |                    Explain            |
 |:-----------------:|:--------------------------------------|
 |What?|A measurement used to identify how far each number in the data set is from the mean.|
 |Formula|![Alt text](/images/2023/20230312/Variance-Population.png) <br /> ![Alt text](/images/2023/20230312/Variance-Sample.png)|
