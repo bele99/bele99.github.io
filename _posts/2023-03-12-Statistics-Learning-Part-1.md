@@ -27,6 +27,7 @@ Sensitive to outliers
 3. used to determine the volatility of markets, financial instruments, and investment returns.
 
 ## Variance
+
 | Variance    |     Explain     |
 |:----------------------------------|:-------------------------------|
 |What?|A measurement used to identify how far each number in the data set is from the mean.|
@@ -37,6 +38,7 @@ Sensitive to outliers
 |Application|1.Machine Learning: Used in Hypothesis Testing and Confidence Interval 2. Finance: Used to understand how risky and volatile the investment is, stability of mutual funds. 3.Forecasting: To make the weather forecast, projections about the company’s revenue. 4.Sports: Used to select the players in the team|
 
 ## Coefficient of Variation (CV)
+
 | Coefficient of Variation (CV)    |     Explain     |
 |:----------------------------------|:-------------------------------|
 |What?|The CV is the ratio of the standard deviation to the mean, expressed as a percentage.|
@@ -48,6 +50,7 @@ Sensitive to outliers
 commonly used in finance and biology.|
 
 ## Median Absolute Deviation(MAD)
+
 | Median Absolute Deviation(MAD)    |     Explain     |
 |:----------------------------------|:-------------------------------|
 |What?|The MAD is the median of the absolute deviations from the median of the dataset. It quantifies the spread of data points around the median.|
