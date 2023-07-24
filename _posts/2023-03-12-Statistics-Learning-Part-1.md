@@ -28,19 +28,19 @@ Sensitive to outliers
 
 ## Variance
 
-| Variance    |     Explain     |
-|:----------------------------------|:-------------------------------|
+| Variance                           |                    Explain            |
+|:----------------------------------:|:--------------------------------------|
 |What?|A measurement used to identify how far each number in the data set is from the mean.|
 |Formula|![Alt text](/images/2023/20230312/Variance-Population.png) ![Alt text](/images/2023/20230312/Variance-Sample.png)|
-|Interpretation|=0: all of the values within a data set are identical. >0: all variances are the form of positive numbers. * Large variances: the numbers are far from the mean and each other. * Small variances: the numbers are closer toghter in value.|
+|Interpretation|**=0**: all of the values within a data set are identical. <br /> **>0**: all variances are the form of positive numbers. <br /> **Large variances**: the numbers are far from the mean and each other. <br /> **Small variances**: the numbers are closer toghter in value.|
 |Advantage|It measures the spread of data points from the mean.|
 |Disadvantage|Sensitive to outliers, like SD.|
-|Application|1.Machine Learning: Used in Hypothesis Testing and Confidence Interval 2. Finance: Used to understand how risky and volatile the investment is, stability of mutual funds. 3.Forecasting: To make the weather forecast, projections about the company’s revenue. 4.Sports: Used to select the players in the team|
+|Application|1.Machine Learning: Used in Hypothesis Testing and Confidence Interval <br /> 2. Finance: Used to understand how risky and volatile the investment is, stability of mutual funds. <br /> 3.Forecasting: To make the weather forecast, projections about the company’s revenue. <br /> 4.Sports: Used to select the players in the team|
 
 ## Coefficient of Variation (CV)
 
-| Coefficient of Variation (CV)    |     Explain     |
-|:----------------------------------|:-------------------------------|
+| Coefficient of Variation (CV)     |            Explain          |
+|:--------------------------------:|:----------------------------------|
 |What?|The CV is the ratio of the standard deviation to the mean, expressed as a percentage.|
 |Formula|![Alt text](/images/2023/20230312/CV-Population.png) ![Alt text](/images/2023/20230312/CV-Smaple.png)|
 |Interpretation|It measures the relative variability compared to the mean.|
