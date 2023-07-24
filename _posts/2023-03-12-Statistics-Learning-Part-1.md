@@ -11,8 +11,8 @@ tags: [Statistic, Standard Deviation, Variance, Coefficient of Variation, Median
 The standard deviation measures the average distance between each data point and the mean of the dataset.SD is the most common measure of variability.
 
 ### Formula
-![Alt text](/images\2023\20230312\SD-Population.png) {: width="30" height="20" .w-50 .left}
-![Alt text](/images\2023\20230312\SD-Smaple.png) {: width="30" height="20" .w-50 .left}
+![Desktop View](/images\2023\20230312\SD-Population.png) 
+![Desktop View](/images\2023\20230312\SD-Smaple.png)
 
 ### Interpretation
 - Larger standard deviation: the numbers are more dispersed.
